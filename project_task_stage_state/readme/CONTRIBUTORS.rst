@@ -4,3 +4,4 @@
 - Saran Lim. <saranl@ecosoft.co.th>
 - Nattapol Sinsuphan<gamso321@gmail.com>
 - Manuel Regidor <manuel.regidor@sygel.es>
+- Dhara Solanki <dhara.solanki@initos.com>

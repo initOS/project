@@ -14,7 +14,7 @@ Add State field to Project Stages
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fproject-lightgray.png?logo=github
-    :target: https://github.com/OCA/project/tree/15.0/project_task_stage_state
+    :target: https://github.com/OCA/project/tree/16.0/project_task_stage_state
     :alt: OCA/project
 .. |badge4| image:: https://img.shields.io/badge/weblate-Translate%20me-F47D42.png
     :target: https://translation.odoo-community.org/projects/project-15-0/project-15-0-project_task_stage_state
@@ -49,12 +49,13 @@ Usage
 
 To use this module, you need to:
 
-#. Go to Project -> Configuration -> Stages and click on a stage
+#. Enable Project stages from Settings > Project > Project Stages.
+#. Go to Project -> Configuration -> Task Stages and click on a stage
 #. Select the state you would like to associate that stage with from the dropdown "State" menu
 #. Save your changes
 #. Go to Project -> Dashboard and click on a project
 #. Click on task in the stage you just edited
-#. Under the "Extra Info" tab, you can see the "State" field for that task
+#. You can see the "State" field for that task
 
 Bug Tracker
 ===========
@@ -83,6 +84,7 @@ Contributors
 - Saran Lim. <saranl@ecosoft.co.th>
 - Nattapol Sinsuphan<gamso321@gmail.com>
 - Manuel Regidor <manuel.regidor@sygel.es>
+- Dhara Solanki <dhara.solanki@initos.com>
 
 Maintainers
 ~~~~~~~~~~~
@@ -97,6 +99,6 @@ OCA, or the Odoo Community Association, is a nonprofit organization whose
 mission is to support the collaborative development of Odoo features and
 promote its widespread use.
 
-This module is part of the `OCA/project <https://github.com/OCA/project/tree/15.0/project_task_stage_state>`_ project on GitHub.
+This module is part of the `OCA/project <https://github.com/OCA/project/tree/16.0/project_task_stage_state>`_ project on GitHub.
 
 You are welcome to contribute. To learn how please visit https://odoo-community.org/page/Contribute.
