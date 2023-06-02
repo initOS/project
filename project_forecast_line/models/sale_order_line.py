@@ -93,9 +93,9 @@ class SaleOrderLine(models.Model):
             self._update_forecast_lines()
         return res
 
-    @api.onchange("product_id")
-    def product_id_change(self):
-        res = super().product_id_change()
+    @api.depends("product_id")
+    def _compute_name(self):
+        res = super()._compute_name()
         for line in self:
             if not line.product_id.forecast_role_id:
                 line.forecast_date_start = False
