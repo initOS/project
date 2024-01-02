@@ -4,11 +4,14 @@
 from odoo.tests import Form, common
 from odoo.tests.common import new_test_user
 
+from odoo.addons.base.tests.common import DISABLED_MAIL_CONTEXT
+
 
 class TestProjectStockBase(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        cls.env = cls.env(context=dict(cls.env.context, **DISABLED_MAIL_CONTEXT))
         cls.product_a = cls.env["product.product"].create(
             {"name": "Test product A", "detailed_type": "product", "standard_price": 10}
         )
@@ -44,24 +47,21 @@ class TestProjectStockBase(common.TransactionCase):
         cls.stage_in_progress = cls.env.ref("project.project_stage_1")
         cls.stage_done = cls.env.ref("project.project_stage_2")
         group_stock_user = "stock.group_stock_user"
-        ctx = {
-            "mail_create_nolog": True,
-            "mail_create_nosubscribe": True,
-            "mail_notrack": True,
-            "no_reset_password": True,
-        }
         new_test_user(
             cls.env,
             login="basic-user",
             groups="project.group_project_user,%s" % group_stock_user,
-            context=ctx,
         )
         new_test_user(
             cls.env,
             login="manager-user",
             groups="project.group_project_manager,%s,analytic.group_analytic_accounting"
             % group_stock_user,
-            context=ctx,
+        )
+        new_test_user(
+            cls.env,
+            login="project-task-user",
+            groups="project.group_project_user,stock.group_stock_user",
         )
 
     def _prepare_context_task(self):
